@@ -1,0 +1,7 @@
+# Project exclude paths
+/consumer/target/
+/eureka/target/
+/gateway/target/
+/user_service/target/
+/user_service2/target/
+/user_service3/target/

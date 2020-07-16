@@ -1,0 +1,20 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:   #需要配置的路由（需要代理的微服务）
+        - id: user-service-route
+          uri: lb://user-service
+          predicates:
+            - Path=/**
+          filters:
+            - PrefixPath=/getUser
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
